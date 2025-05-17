@@ -7,10 +7,8 @@
 ### What is condition?
 *  Some rules and regulations
 *  It is a collection of statements defined by developer
-*  
 ### purpose of condition
 * if we want to execute some block of code at particular point of time only.
-* 
 ### Block of code
 * A block of code is used to group multiple statements
 * Block of code is independent
