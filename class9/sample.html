@@ -1,0 +1,29 @@
+<!-- Starting of the file-->
+
+<html>
+    <head>
+        <title>Tab about Objects</title>
+    </head>
+    <body>
+        <h1>Concept Of Objects</h1>
+        <div id = 'test' >
+        </div>
+        <script>
+            var country = 'India';
+            const addr = {
+            dno: 8997,
+            country: country,
+            owner: 'akhil',
+            area: 'boddurai centre',
+            village: 'martur',
+        }
+        const updateUser = {...addr, owner: 'Nageswarrao'};
+        console.log(updateUser)
+
+        addr.mandal = 'martur';
+        addr['state'] = 'AP';
+        console.log(addr)
+ 
+        </script>
+    </body>
+</html>

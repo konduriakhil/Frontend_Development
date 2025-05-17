@@ -58,7 +58,7 @@ const obj = { firstname: 'akhil', secondname:'konduri', city:'Hyd', };// an obje
 <html>
     <head>
         <title>Concept of Object</title>
-    </head>
+    </head> 
     <body>
         <h2>Objects in JS</h2>
 
