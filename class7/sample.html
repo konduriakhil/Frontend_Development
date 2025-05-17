@@ -1,0 +1,46 @@
+
+<!-- Starting of HTML-->
+
+<html>
+    <head>
+        <title>Tab of JS</title>
+        <style>
+            #test{
+                border: 2px solid #333;
+                width: 300px;
+                height: 100px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id = 'test'>
+        </div>
+
+        <script>
+            
+            var divEle = document.getElementById('test');
+
+
+/*             const greeting = (name) =>{
+                return 'Welcome to '+ name;
+            }
+            console.log(greeting('ram'));
+            console.log(greeting('akhil')); */
+/* 
+            const add = (a, b) => {
+                return a+b;
+            }; */
+
+            const add = (a, b) => a + b;//if  you have one line in functioin {} are not mustly required
+            const sub = (a, b) => a-b;
+
+            let x = add(10, 20);
+            document.getElementById('test').innerHTML = x;
+            document.getElementById('test').innerHTML += sub(45, 7);
+
+        </script>
+
+    </body>
+</html>
