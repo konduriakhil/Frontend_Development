@@ -1,0 +1,33 @@
+<!--Starting of the file-->
+
+<html>
+    <head>
+        <title>Concept of Object</title>
+    </head>
+    <body>
+        <h2>Objects in JS</h2>
+
+        <div id = 'test'>
+
+        </div>
+
+        <script>
+
+            const user = {
+                first: 'akhil ',
+                last:'konduri',
+                city:'hyd',
+                state: 'TS',
+                pincode: 488888,
+                status: true                 
+            };
+            document.writeln(typeof user)//it prints only strings            
+            console.log(user)// it prints objects also
+            console.log(user.city)
+            document.writeln(user['first'])// we can access objects like this also.
+            document.getElementById('test').innerHTML = user.first + user.last
+
+
+        </script>
+    </body>
+</html>
