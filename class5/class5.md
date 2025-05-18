@@ -13,6 +13,7 @@
          *  x = 100
          *  name = 'akhil'
 *  In JS integer and float is combined and say as Number
+
 ## Number
 * var price = 24.44;
 * var age = 27;
