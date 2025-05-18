@@ -5,7 +5,6 @@
       * ![alt text](images/img1.png)
       * with id of the element we can access the elements
       * ![alt text](images/img2.png)
-      * 
 ```html
 
 <!-- Starting of HTML-->
