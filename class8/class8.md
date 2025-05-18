@@ -11,6 +11,7 @@
 * With the help of class we can create our own objects
 * In JS, it provides collection of predefined objects to implement the functionality.
 * in Js, every html element will be treated as object
+
 ```html
 <!--Starting of the file-->
 
