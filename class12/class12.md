@@ -73,6 +73,96 @@ switch (condition) {
 
 }
 ```
+
+### 🔁 Syntax of `switch`
+
+```javascript
+switch(expression) {
+  case value1:
+    // Code to run if expression === value1
+    break;
+  case value2:
+    // Code to run if expression === value2
+    break;
+  ...
+  default:
+    // Code to run if no case matches
+}
+```
+
+---
+
+### 🔍 Explanation of Parts
+
+* **`expression`**: The variable or value you want to compare.
+* **`case value:`**: Each case checks if `expression === value`.
+* **`break;`**: Tells JavaScript to exit the `switch` after a match. If you omit it, it will **fall through** to the next case.
+* **`default:`** (optional): Runs if **no cases match**.
+
+---
+
+### ✅ Example
+
+```javascript
+let fruit = "apple";
+
+switch(fruit) {
+  case "banana":
+    console.log("It's a banana!");
+    break;
+  case "apple":
+    console.log("It's an apple!");
+    break;
+  case "orange":
+    console.log("It's an orange!");
+    break;
+  default:
+    console.log("Unknown fruit");
+}
+```
+
+**Output:**
+
+```
+It's an apple!
+```
+
+---
+
+### 🔁 Without `break` (Fall-through)
+
+```javascript
+let day = 2;
+
+switch(day) {
+  case 1:
+    console.log("Monday");
+  case 2:
+    console.log("Tuesday");
+  case 3:
+    console.log("Wednesday");
+}
+```
+
+**Output:**
+
+```
+Tuesday
+Wednesday
+```
+
+> Because there's no `break`, it continues to run all cases below the matched one.
+
+---
+
+### 🛑 Best Practice
+
+Always use `break` unless **fall-through is intentional** — otherwise, it may cause unexpected behavior.
+
+---
+
+Let me know if you'd like a real-world example, like using `switch` with user input or in a web app.
+
 ![alt text](images/img4.png)![alt text](images/img5.png)
 
 ```html
