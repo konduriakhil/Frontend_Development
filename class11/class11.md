@@ -9,7 +9,6 @@ work
       * undefined
 ![alt text](images/img8.png)
 ![alt text](images/img9.png)
-
 * If we pass anything apart from above, if condition will get executed
 * Without **if** statement **else** statement does not exist or it will give **syntax error.**
 ```html
