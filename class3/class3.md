@@ -83,4 +83,4 @@ document.write(username);
 ### Declaration or Block of Code
 -----------------------------------------------
 
-Any thing write in between `{ }` is called Declaration or block of code.
+* Any thing write in between `{ }` is called Declaration or block of code.
