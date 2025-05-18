@@ -87,6 +87,7 @@ function <function_name>(parameters1, parameter2, .......)
 *  scope of it is within the entire file
 *  we can access inside and outside of the function also.
 *  All the function parameters are act as a local variables
+![alt text](images/img1.png)
 ```html
 
 <!-- Starting of HTML-->
