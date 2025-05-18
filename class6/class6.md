@@ -12,6 +12,7 @@ function <function_name>(parameters1, parameter2, .......)
     // some logic
 }
 
+
 ```
 ### Parameters
 * purpose of passing parameter to a function is to parametrise the function or code.
