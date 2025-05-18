@@ -46,6 +46,7 @@ const state = 'TS';
 
 ```
 * variables must be write inside JS
+* The scope of the variable is within script part only`<script> </script>`
 
 ```html
 <html>
@@ -55,7 +56,7 @@ const state = 'TS';
 </head>
 <body>
 
-document.write(x);
+<!-- document.write(x);The scope of the variable is within script part only`<script> </script>` -->
 
 <h1 style="color:red;" onclick="this. style.display='none' ">JavaScript Variables</h1>
 <script>
@@ -64,8 +65,8 @@ var x = 100;
 
 var username = "Ram Babburi";
 
-document.write(x);I
-console.log('x') #f12 to access console
+document.write(x);
+console.log('x') //f12 to access console
 document.write(username);
 
 </script>
@@ -75,9 +76,12 @@ document.write(username);
 
 ### commenting in JS
 ----------------------------------
-
+#### Syntax
 * Multiline comment -` /* -- */`
 * single line comment - `// -- //`
+
+### Commenting in HTML
+**Syntax**: `<!--  -->`
 
 
 ### Declaration or Block of Code
