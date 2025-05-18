@@ -141,6 +141,8 @@
     * it has empty value
 * Null datatype is object
     * it has empty value
+    ### objects relation to assignment operators
+    * In objects regarding to `==` or `===` compares reference points(address) and will not consider values or data types.
 ```html
 <html>
     <head>
