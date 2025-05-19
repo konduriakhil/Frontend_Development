@@ -1,12 +1,12 @@
 # Class 11
 # Conditional statements if, else
-* For following if condition does not 
+* For the  following if condition does not 
 work
+ * **null**
+  * **false**
+  * **0**
+  * **undefined**
 * After evaluating the condition if we got below. the block of code will never executed
-      * null
-      * false
-      * 0
-      * undefined
 ![alt text](images/img8.png)
 ![alt text](images/img9.png)
 * If we pass anything apart from above, if condition will get executed
