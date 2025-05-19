@@ -8,19 +8,52 @@
         <h2>for loops in JS</h2>
         <script>
 
-            var f1 = 0;
-            var f2 =1;
-            var f3;
-            i=1;
-            document.writeln(f1);
-            document.writeln(f2);
-            while(i<=10){
-                f3 = f1+f2;
-                f1 = f2;
-                f2 = f3;
-                document.writeln(f3)
-                i++;
+
+            var items = ['apple', 'banana', 'jack fruit', 'grapes'];
+
+
+            //modifying
+            items[2] = 'vinay';
+            console.log(items)
+
+            //finding lenght
+            console.log(items.length)
+
+            //push  // adding component to last
+            items.push('akhil')
+            console.log(items)
+
+            //pop()
+            items.pop();
+            console.log(items)
+
+            //shift() //removing first value
+            items.shift()
+            console.log(items)
+
+            //unshift() //adding elements to the beginning
+            items.unshift('first');
+            console.log(items);
+
+            //index() 
+            console.log(items.indexOf('banana'));
+
+            //include() //true or false
+            console.log(items.includes('vinay'))
+
+            //array of for loop
+            for(i=0;i<items.length;i++){
+
+                console.log(items[i]);
             }
+
+            //for of  loop
+            for(let item of items){
+                console.log(item)
+            }
+
+
+
         </script>
     </body>
 </html>
