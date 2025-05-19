@@ -1,44 +1,52 @@
-
-<!-- Starting of HTML-->
+<!-- Starting of the File-->
 
 <html>
     <head>
-        <title>Tab of JS</title>
-        <style>
-            #test{
-                border: 2px solid #333;
-                width: 300px;
-                height: 100px;
-                margin: 5px;
-            }
-        </style>
+        <title>Tab of Conditional Statements, if else</title>
     </head>
     <body>
-
+        <h1>Conditional Statements: if, else...</h1>
         <div id = 'test'>
-        </div>
 
+        </div>
         <script>
 
-            function ram1(){
-                return 'Ram1';
-            };
+            isLogin = true;
+            if((4 % 2 === 0 || 10<=5) && 10 == 100)
+            {
+                const username = 'Akhil';
+                document.writeln('<h3> Welcome to '+username+'</h3>');
+                document.writeln('<p>Your logged in time is: '+new Date().toLocaleTimeString()+'</p>');
+            }// part of function and dependent
+            else if(11<= 2)
+            {
+                document.writeln('You have another account...congratulations....')
+            }
+            else
+            {
+                document.writeln('<h2><p>please login</p></h2>');
+                document.writeln("Don't you have account? please create");
+            }// independent and not a part of function
 
-            const ram2 = function(){
-                return 'Ram2'
-            };
+/*             marks = 95
 
-            const ram3 = () => {
-                return 'Ram3'
-            };
-            var x = document.getElementById('test')
-
-            document.getElementById('test').innerHTML = ram1();
-            document.getElementById('test').innerHTML += ram2();
-            document.getElementById('test').innerHTML += ram3();
-            console.log(typeof x)
+            if(marks >= 90)
+            {
+                document.writeln('First Grade');
+            }
+            else if(marks >= 60 )
+            {
+                document.writeln('Second Grade');
+            }
+            else if(marks>=35 )
+            {
+                document.writeln('Third Grade');
+            }
+            else
+            {
+                document.writeln('Fail');
+            } */
 
         </script>
-
     </body>
-</html>
+ </html>

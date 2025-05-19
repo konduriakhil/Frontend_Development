@@ -1,11 +1,12 @@
 # class 12
-# Ternary, Operator, Switch
+# Ternary Operator, Switch
 ## syntax
 * This can be said as simple if else statement
 * In this can able to write only one statement as contraction to if condition has multiple statements in a block.
 ```js
 (condition) ? true block : false block;
 ```
+
 ![alt text](images/img1.png)
 ![alt text](images/img2.png)
 ![alt text](images/img3.png)
@@ -56,7 +57,6 @@
 * for simple conditions we use switch
 * for complex conditions we can use if,else conditions
 * If you work with complex conditons like comparison it is not usefull
-* 
 ```js
 switch (condition) {
     case1:
@@ -210,11 +210,11 @@ Let me know if you'd like a real-world example, like using `switch` with user in
  </html>
 ```
 # Looping statements
-**for** 
-**while**
-**do-while**
-**for in**
-**for of**
+* **for** 
+* **while**
+* **do-while**
+* **for in**
+* **for of**
 ### what is a loop?
 * A loop is a repeated process until some particular point of time
 * Every loop has a starting point and an ending point.
