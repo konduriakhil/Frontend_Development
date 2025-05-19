@@ -61,9 +61,66 @@ printing 19 table like `19 * 1 = 19`
 ```
 ![alt text](images/img5.png)
 ## Assignment
-* print prime numberes between 2 to 20
+* print prime numberes between 2 to 
+20
+```html
+<!--Starting of the file-->
+
+<html>
+    <head>
+        <title>for loop</title>
+    </head>
+    <body>
+        <h2>for loops in JS</h2>
+        <script>
+            
+            for (var i = 2; i <= 2000; i++) {
+
+                    var isPrime = true;
+                    for (var j = 2; j < i; j++) {
+                            if (i % j === 0) {
+                                isPrime = false;
+                                break;
+                            }
+                    }
+                    
+                    if (isPrime) {
+                        document.write(i + "<br />");
+                    }
+                }
+
+        
+        </script>
+    </body>
+</html>
+```
 * print even numbers in between 1 and 10
 * print odd numbers in between 1 and 10
+```html
+<!--Starting of the file-->
+
+<html>
+    <head>
+        <title>for loop</title>
+    </head>
+    <body>
+        <h2>for loops in JS</h2>
+        <script>
+            
+            for(i=1; i<=10 ; i++){
+
+                if(i%2 == 0)
+                document.writeln(i+' is a even number');
+/*                 else
+                {
+                    document.writeln(i +' is a odd number')
+                } */
+            }
+        
+        </script>
+    </body>
+</html>
+```
   
 
 
