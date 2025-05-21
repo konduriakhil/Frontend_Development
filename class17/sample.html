@@ -1,0 +1,43 @@
+<!--Starting of the file-->
+
+<html>
+    <head>
+        <title>For Loop</title>
+    </head>
+    <body>
+        <h2>For Loops in JS</h2>
+        <div id = 'test'>
+        </div>
+        <script>
+        const users = [
+        { id: 1,firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032, address: {street: 'mlap street', landmark: 'mlap company'} },
+        { id: 2,firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001, address: {street: 'mlap street', landmark: 'mlap company'}  },
+        { id: 3,firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671 , address: {street: 'mlap street', landmark: 'mlap company'} },
+        { id: 4,firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006 , address: {street: 'mlap street', landmark: 'mlap company'} },
+        { id: 5,firstname: "Sri Raj", lastname: "Kamisetti", city: "Amalapuram", pincode: 533249 , address: {street: 'mlap street', landmark: 'mlap company'} }
+    ];    
+    var txt = ''    ;
+    txt += "<table border='1' cellspacing='1' cellpadding='10'>";
+        txt += '<tr><th>ID</th><th>firstname</th><th>lastname</th><th>city</th><th>pincode</th><th>street</th><th>landmark</th></tr>'
+        txt += '<tr>'
+            for(i=0;i<users.length;i++){
+                txt += '<tr>'
+                txt += '<td>'+users[i].id+'</td>'
+                txt += '<td>'+users[i].firstname+'</td>'
+                txt += '<td>'+users[i].lastname+'</td>'
+                txt += '<td>'+users[i].city+'</td>'
+                txt += '<td>'+users[i].pincode+'</td>'
+                txt += '<td>'+users[i].address.street+'</td>'
+                txt += '<td>'+users[i].address.landmark+'</td>'
+                txt += '</tr>'
+            }
+        txt += '</tr>'
+    txt += '</table>'
+    
+    document.getElementById('test').innerHTML = txt;
+    console.log(users[0].address.landmark)
+ 
+        </script>
+    </body>
+</html>
+
