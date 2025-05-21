@@ -28,3 +28,41 @@
 </html>
 
 ```
+```html
+<!--Starting of the file-->
+
+<html>
+    <head>
+        <title>For Loop</title>
+    </head>
+    <body>
+        <h2>For Loops in JS</h2>
+        <script>
+            const users = [
+                { firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032 },
+                { firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001 },
+                { firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671 },
+                { firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006 },
+                { firstname: "Sri Raj", lastname: "Kamisetti", city: "Amalapuram", pincode: 533249 }
+            ];
+            document.writeln(users[0].firstname)
+        </script>
+    </body>
+</html>
+
+```
+
+```js
+          const users = [
+                { firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032 },
+                { firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001 },
+                { firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671 },
+                { firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006 },
+                { firstname: "Sri Raj", lastname: "Kamisetti", city: "Amalapuram", pincode: 533249 }
+            ];
+            document.writeln(users[0].firstname)
+            for(i=0; i<users.length; i++){
+                document.writeln(users[i].firstname, users[i].lastname)
+            }
+```
+![alt text](images/img5.png)

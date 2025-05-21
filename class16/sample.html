@@ -2,19 +2,26 @@
 
 <html>
     <head>
-        <title>for loop</title>
+        <title>For Loop</title>
     </head>
     <body>
-        <h2>for loops in JS</h2>
+        <h2>For Loops in JS</h2>
+        <div id = 'test'></div>
         <script>
-            let obj = {
-                firstname:  'akhil',
-                lastname: 'konduri',
-                address: ['maithrivanam', 'ameerpet'],
-                country: 'india'
+            const users = [
+                { firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032 },
+                { firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001 },
+                { firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671 },
+                { firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006 },
+                { firstname: "Sri Raj", lastname: "Kamisetti", city: "Amalapuram", pincode: 533249 }
+            ];
+            document.writeln(users[0].firstname)
+            for(i=0; i<users.length; i++){
+                document.writeln(users[i].firstname, users[i].lastname)
             }
-            console.log(obj.address[0])
+            document.getElementById('test').innerHTML = users[0].firstname
+
         </script>
     </body>
 </html>
- 
+
