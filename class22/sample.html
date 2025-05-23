@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'test'>
+    </div>
+    <script>
+        const products = [
+        { id: 1, name: 'shirt', price: 200},
+        { id: 1, name: 'belt', price: 580},
+        { id: 1, name: 'jeans', price: 900},
+        { id: 1, name: 'socks', price: 900}];
+
+        const total = products.reduce((acc, item) =>{
+            return acc + item.price
+        }, '0')
+        console.log(total)
+    </script>
+</body>
+</html>
