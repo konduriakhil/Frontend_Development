@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id = 'test'>
+
+    </div>
+    <script>
+
+        const names  = ['akhil', 'sai', 'akhil', 'varshath','akhil', 'ajay', 'akhil', 'anand'];
+
+        let txt = '';
+        txt += '<ul>'
+        names.map((item, index, Array) =>{
+            txt += '<li>'+item+'</li>';
+        })
+        txt += '</ul>'
+        document.getElementById('test').innerHTML = txt;
+        
+    </script>
+</body>
+</html>
