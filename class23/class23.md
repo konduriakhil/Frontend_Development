@@ -117,6 +117,70 @@ var str = 'welcome to js'
 ![alt text](images/img12.png)
 ### difference
 * Both methods are for cutting a string only the difference between these methods is slice method accepts negative index's and sub strinng method does not accept negative index's
+The `slice()` and `substring()` methods are both used in JavaScript to extract parts of a string, but they have some key differences in behavior. Here's a comparison:
+
+---
+
+### 🔹 `slice(start, end)`
+
+* **Parameters**:
+
+  * `start`: index to begin extraction (inclusive)
+  * `end`: index to end extraction (exclusive)
+* **Accepts negative indices**: Yes
+* **Returns**: A new string from `start` to `end` (not including `end`)
+
+**Example:**
+
+```javascript
+let str = "JavaScript";
+str.slice(0, 4);      // "Java"
+str.slice(-6, -3);    // "Scr"
+```
+
+---
+
+### 🔹 `substring(start, end)`
+
+* **Parameters**:
+
+  * `start`: index to begin extraction (inclusive)
+  * `end`: index to end extraction (exclusive)
+* **Accepts negative indices**: No (negative values are treated as `0`)
+* **Automatically swaps indices if `start > end`**: Yes
+
+**Example:**
+
+```javascript
+let str = "JavaScript";
+str.substring(0, 4);      // "Java"
+str.substring(4, 0);      // Also "Java" (swaps the arguments)
+str.substring(-3, 4);     // Treated as (0, 4) → "Java"
+```
+
+---
+
+### 🔸 Summary of Differences:
+
+| Feature                     | `slice()`        | `substring()`       |
+| --------------------------- | ---------------- | ------------------- |
+| Negative indices allowed    | ✅ Yes            | ❌ No (treated as 0) |
+| Index swap if `start > end` | ❌ No             | ✅ Yes               |
+| Typical usage               | Strings & arrays | Strings only        |
+
+---
+
+### ✅ Use `slice()` when:
+
+* You want consistent behavior with arrays.
+* You want to use negative indices.
+
+### ✅ Use `substring()` when:
+
+* You want automatic handling of swapped indices and are only working with strings.
+
+Let me know if you want to see similar behavior in other languages (like Python).
+
 ### substr()
 * this method accept's lenght 
 ```html
