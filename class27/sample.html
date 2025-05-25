@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="addStyle()">
+
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide1</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide2</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide3</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide4</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide5</h1>
+    
+    <script>
+        const welcome =(ele) =>{
+            // element.style.display= 'none';
+/*             element.style.backgroundColor = 'green';
+            element.style.color = 'blue';
+            element.style.padding = '20px';
+            element.style.borderRadius = '10px';
+            element.style.textAlign = 'center'; */
+
+            ele.style.cssText = "background-color: green; color: yellow; padding: 20px; border-radius: 10px;"
+                } 
+
+        const addStyle = () => {
+            var elements = document.querySelectorAll('.title')// it returns array
+
+/*             console.log(elements)
+             for(i=0; i<elements.length; i++){
+                console.log(elements[i]);
+            }  */
+
+            for(element of elements){
+                element.style.cssText = 
+                            "background-color: red;\n" +
+                            "color: green;\n" +
+                            "padding: 20px;\n" +
+                            "border-radius: 10px;\n" +
+                            "text-align: center;";
+
+            }
+
+        }
+
+    </script>
+    
+</body>
+</html>
