@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <div id = 'test'></div>
+<body onload="addFun()">
+
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide1</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide2</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide3</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide4</h1>
+    <h1 class = 'title' onclick="welcome(this)">Click me to hide5</h1>
+    
     <script>
-        function getDateByOrdinal(date){
-            const Date = new Date(date)
-            const Day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']
+     const welcome =(element) =>{
+        element.style.cssText = "background-color: blue; color: yellow; padding: 20px; border-radius: 10px; text-align: center";
+                }
+
+        const addFun =() =>{
+            const elements = document.querySelectorAll('.title')
+            for(element of elements){
+                element.style.cssText = "background-color: red; color: green; padding: 20px; border-radius: 10px; text-align: center"
+
+            }
         }
     </script>
     

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .block{
+            height: 400px;
+            width: 400px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text" id = 'uname'  onkeyup="someAction(this)"/>
+        <div class="block"></div>
+    </div>
+    <script>
+
+        var div = document.querySelector('.block');
+        const someAction =(ele)=>{
+/*             // console.log(ele)
+            console.log(event.key) //aski value
+            console.log(event.which)// aski value
+            console.log(event.keyCode);// key code*/
+
+/*             if (event.which === 13 ){
+                // console.log(ele.value);
+                div.innerHTML +='<p>'+ele.value+'</p>'
+                ele.value = '';
+            }
+ */
+            
+            if (event.which === 13 && event.ctrlKey === true){
+                // console.log(ele.value);
+                div.innerHTML +='<p>'+ele.value+'</p>'
+                ele.value = '';
+            }
+        }
+    </script>    
+</body>
+</html>
