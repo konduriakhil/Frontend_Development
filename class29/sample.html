@@ -24,13 +24,13 @@
                 <small class="error" id="password_error"></small>
             </div>
             <div class="formgroup">
-                <label id="state">state</label>
-                <select id="state" name="state" class="formcontrol" onchange="getDistricts(this)">
+                <label id="state_label">State</label>
+                <select id="state" name="state" class="formcontrol" onchange="getDistricts(this)" onfocus="hideError(this)" onblur="checkError(this)">
                     <option value="">--select state--</option>
                     <option value="Telangana">Telangana</option>
                     <option value="AndhraPradesh">AndhraPradesh</option>
                 </select>
-                <small class="error" id="state"></small>
+                <small class="error" id="state_error"></small>                
             </div>
             <div class="formgroup">
                 <input type="submit" value="Register" class="btn"/>
@@ -43,6 +43,8 @@
             var uname= document.getElementById('uname')
             var email= document.getElementById('email')
             var password= document.getElementById('password')
+            var state= document.getElementById('password')
+
 
 
             if(uname.value === ''){
@@ -56,6 +58,10 @@
             if(password.value === ''){
                 email.style.cssText = 'border: 2px solid red';
                 document.getElementById('password_error').innerHTML='password is required'
+            }
+            if(state.value === ''){
+                state.style.cssText = 'border: 2px solid red';
+                document.getElementById('state_error').innerHTML='state is required'
             }
         }
         const getLabel = (ele)=>{
