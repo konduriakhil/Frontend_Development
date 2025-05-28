@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .block{
+            background: red;
+            padding: 10px;
+            outline: 2px solid blue;
+        }
+        .container{
+            width: 300px;
+            border: 2px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java Script Training</h1>
+
+    <div class="container " style="margin: 40px;">
+        <h1>Welcome</h1>
+    </div>
+
+    <button onclick="removeDiv()">Remove Div element</button>
+
+    <script>
+
+        const removeDiv =()=>{
+
+            var container = document.querySelector('.container');
+            if (container){
+            container.remove()
+            }
+        }
+
+
+    </script>    
+</body>
+</html>

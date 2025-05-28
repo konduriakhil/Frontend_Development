@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM</title>
 </head>
 <body >
-    <form action="/submit" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="username" />
-    </form>    
+    <h1>JS Practise</h1> 
+    <div class="container">
+        <h1 id="title1" class="data">HTML</h1>
+        <h1 id="title2" class="data">CSS</h1>
+        <h1 id="title3" class="data">JQUERY</h1>
+        <h1 id="title4" class="data">React</h1>
+        <h1 id="title5" class="data">JS</h1>
+        <h1 id="title6" name='item6'  class="data">JS</h1>
+        <h1 id="title7" name='item6'  class="data">JS</h1>
+        
+    </div>
     <script>
-     const welcome =(element) =>{
-        element.style.cssText = "background-color: blue; color: yellow; padding: 20px; border-radius: 10px; text-align: center";
-                }
 
-        const addFun =() =>{
-            const elements = document.querySelectorAll('.title')
-            for(element of elements){
-                element.style.cssText = "background-color: red; color: green; padding: 20px; border-radius: 10px; text-align: center"
+        // var elements = document.getElementsByName('item6')
+/*         for(ele of elements){
+            ele.style.cssText = 'background-color: red'
+        } */
 
-            }
-        }
+        var elements = document.querySelectorAll('h1')
+        console.log(elements)
+
+        
+
     </script>
     
 </body>
