@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="block">
+        <p>Father</p>
+        <div class="box">
+            <p>Child</p>
+        </div>
+      </div>
+      <script>
+            /* var user = {firstname: "Ram", lastname: "B", city: "Hyderabad", pincode: 500032};
+            // # user is a Object
+            var user1 = {"firstname": "Ram", "lastname": "B", "city": "Hyderabad", "pincode": 500032};
+            // # userl is Object
+            var user2 = '{"firstname": "Ram", "lastname": "B", "city": "Hyderabad", "pincode": 500032}';
+            // # user2 is a json string
+            var employees = '[{"id":1, "firstname": "Ram", "lastname": "Babburi"} , {"id":2, "firstname": "Siva", "lastname": "Kumar"} ] ' ;
+            console.log( user);
+            console.log( user1);
+            console.log( user2);
+            console.log( typeof employees); */
+
+/*             const users = [
+            {firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032, dob: "07-25-1987"},
+            {firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001, dob: "04-16-2000"},
+            {firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671, dob: "06-25-2002"},
+            {firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006, dob: "02-16-1998"},
+            {firstname: "Sri Raj", lastname:"Kamisetti", city: "Amalapuram", pincode: 533249, dob: "09-09-1997"}
+                ];
+
+            const data = JSON.stringify(users)
+            console.log(data)
+            console.log(typeof data) */
+
+            var str = '[{"id":1, "firstname": "Ram", "lastname": "Babburi"} , {"id":2, "firstname": "Siva", "lastname": "Kumar"} ] ' 
+            var data = JSON.parse(str);
+            console.log(data)
+            console.log(typeof data)
+      </script>
+        
+</body>
+</html>
