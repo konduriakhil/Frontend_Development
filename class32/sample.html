@@ -3,6 +3,21 @@
 <head>
     <title>Document</title>
     <style>
+        .block{
+            height: 400px;
+            width: 400px;
+            background: red;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            height: 50px;
+            width: 120px;
+            background: #efefef;
+            border: 2px solid #333;
+        }
     </style>
 </head>
 <body>
@@ -13,34 +28,12 @@
         </div>
       </div>
       <script>
-            /* var user = {firstname: "Ram", lastname: "B", city: "Hyderabad", pincode: 500032};
-            // # user is a Object
-            var user1 = {"firstname": "Ram", "lastname": "B", "city": "Hyderabad", "pincode": 500032};
-            // # userl is Object
-            var user2 = '{"firstname": "Ram", "lastname": "B", "city": "Hyderabad", "pincode": 500032}';
-            // # user2 is a json string
-            var employees = '[{"id":1, "firstname": "Ram", "lastname": "Babburi"} , {"id":2, "firstname": "Siva", "lastname": "Kumar"} ] ' ;
-            console.log( user);
-            console.log( user1);
-            console.log( user2);
-            console.log( typeof employees); */
 
-/*             const users = [
-            {firstname: "Ram", lastname: "Babburi", city: "Ongole", pincode: 500032, dob: "07-25-1987"},
-            {firstname: "Anand", lastname: "Pabbineedi", city: "Kakinada", pincode: 533001, dob: "04-16-2000"},
-            {firstname: "Vinod", lastname: "Katte", city: "Anantapur", pincode: 515671, dob: "06-25-2002"},
-            {firstname: "Lakshman", lastname: "D", city: "Kakinada", pincode: 533006, dob: "02-16-1998"},
-            {firstname: "Sri Raj", lastname:"Kamisetti", city: "Amalapuram", pincode: 533249, dob: "09-09-1997"}
-                ];
+        var parent = document.querySelector('.block');
+        var child = document.querySelector('.box');
 
-            const data = JSON.stringify(users)
-            console.log(data)
-            console.log(typeof data) */
-
-            var str = '[{"id":1, "firstname": "Ram", "lastname": "Babburi"} , {"id":2, "firstname": "Siva", "lastname": "Kumar"} ] ' 
-            var data = JSON.parse(str);
-            console.log(data)
-            console.log(typeof data)
+        parent.addEventListener('click', function (){alert('parent called.....')}, true);
+        child.addEventListener('click', function (){alert('child called.....')});
       </script>
         
 </body>

@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>DOM</title>
+    <title>Document</title>
+    <style>
+        .block{
+            height: 400px;
+            width: 400px;
+            background: red;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            height: 50px;
+            width: 120px;
+            background: #efefef;
+            border: 2px solid #333;
+        }
+    </style>
 </head>
-<body >
-    <h1>JS Practise</h1> 
-    <div class="container">
-        <h1 id="title1" class="data">HTML</h1>
-        <h1 id="title2" class="data">CSS</h1>
-        <h1 id="title3" class="data">JQUERY</h1>
-        <h1 id="title4" class="data">React</h1>
-        <h1 id="title5" class="data">JS</h1>
-        <h1 id="title6" name='item6'  class="data">JS</h1>
-        <h1 id="title7" name='item6'  class="data">JS</h1>
-        
+<body>
+    <div class="block">
+        <p>Father</p>
+        <div class="box">
+            <p>Child</p>
+        </div>
     </div>
-    <script>
+    <button id="btn">clickme</button>
+      <script>
 
-        // var elements = document.getElementsByName('item6')
-/*         for(ele of elements){
-            ele.style.cssText = 'background-color: red'
-        } */
+/*         var parent = document.querySelector('.block');
+        var child = document.querySelector('.box');
 
-        var elements = document.querySelectorAll('h1')
-        console.log(elements)
+        parent.addEventListener('click', function (){alert('parent called.....')});
+        child.addEventListener('click', function (){alert('child called.....')}); */
 
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            alert('hello world')
+        })
+      </script>
         
-
-    </script>
-    
 </body>
 </html>
