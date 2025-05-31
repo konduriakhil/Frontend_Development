@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Father
+        {
+            money()
+            {
+                document.writeln('<h1>I have 10L money</h1>');
+            }
+            veichels()
+            {
+                document.writeln('<h1>I have Car and Bike</h1>');
+            }            
+        }
+
+        class Child extends Father
+        {
+            money()
+            {
+                super.money();
+                this.veichels(); // or super.veichels()
+                document.writeln('<h1>child earned 5L money</h1>');
+            }
+
+            veichels()
+            {
+                document.writeln('<h1>I have Bike</h1>');
+            }           
+        }
+
+        const child = new Child();
+        
+        child.money();
+        
+    </script>
+</body>
+</html>
