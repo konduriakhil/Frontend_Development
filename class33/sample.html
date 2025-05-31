@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AJAX Get Request</title>
+</head>
+<body>
+    <h1>AJAX POST Request</h1>
+
+    <form method="post" action="" onsubmit="postDataToServer()">
+        <div class="formgroup">
+            <label>UserName</label>
+            <input type="text" id="uname" class="formcontrol" />
+        </div>
+        <div class="formgroup">
+            <label>Email</label>
+            <input type="text" id="email" class="formcontrol" />
+        </div>
+        <div class="formgroup">
+            <input type="submit" class="formcontrol" value="Register" />
+        </div>
+    </form>
+
+    <div id="data"></div>
+    <script>
+
+        function postDataToServer(){
+
+            event.preventDefault();
+
+            var uname = document.getElementById('uname');
+            var email = document.getElementById('email');
+
+            var obj = new XMLHttpRequest();
+            obj.open('POST', 'https://jsonplaceholder.typicode.com/users',true);
+
+            const data = {username:uname.value,useremail:email.value}
+            obj.send(data)
+
+            obj.onreadystatechange= function(){
+
+                if(obj.readyState==4 && obj.status== 200){
+                    let info = JSON.parse(obj.responseText);
+                    if(info.status === true){
+                        ele.innerHTML = 'Account created successfully';
+                        uname.value ='';
+                        email.value='';
+                    }
+                        }
+                }   
+            }
+    </script>
+</body>
+</html>
