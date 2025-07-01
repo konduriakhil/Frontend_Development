@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Units Demo</title>
+  <style>
+    html {
+      font-size: 16px; /* 1rem = 16px */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+.box{
+  padding: 2em;
+  width: 50%;
+  margin: 2rem;
+  font-size: 1.5em;
+  background-color: red;
+  height: 50vh;
+}
+
+    .info {
+      margin-top: 20px;
+      font-size: 1rem;
+      background-color: lightblue;
+      padding: 10px;
+      width: 50vw;            /* 50% of viewport width */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    This box uses:
+    <ol>
+      <li><strong>em</strong> for padding</li>
+      <li><strong>rem</strong> for margin</li>
+      <li><strong>%</strong> for width</li>
+      <li><strong>vh</strong> for height</li>
+    </ol>
+  </div>
+
+  <div class="info">
+    This box uses <strong>vw</strong> for width.
+  </div>
+
+</body>
+</html>

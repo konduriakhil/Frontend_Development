@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .block{
+            height: 400px;
+            width: 400px;
+            background: red;
+            border: 2px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            height: 50px;
+            width: 120px;
+            background: #efefef;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <p>Father</p>
+        <div class="box">
+            <p>Child</p>
+        </div>
+    </div>
+    <button id="btn">clickme</button>
+      <script>
+
+/*         var parent = document.querySelector('.block');
+        var child = document.querySelector('.box');
+
+        parent.addEventListener('click', function (){alert('parent called.....')});
+        child.addEventListener('click', function (){alert('child called.....')}); */
+
+
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            alert('hello world')
+        })
+      </script>
+        
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Justify Content Center</title>
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: center; /* This centers items horizontally */
+      align-items: center;   /*   This centers items vertically */
+      height: 100vh;           /* Full viewport height */
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: #3498db;
+      color: white;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flex-container">
+    <div class="box">I’m centered!</div>
+  </div>
+
+</body>
+</html>

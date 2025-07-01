@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sample2</title>
+</head>
+<body>
+
+    <h2>LocalStorage Demo</h2>
+
+    <button onclick="getStore()">Get</button>
+    <button onclick="removeAll()">RemoveAll</button>
+
+    <script>
+
+        // Get and log data from localStorage
+        const getStore = () => {
+            console.log(localStorage.getItem("name"));
+            console.log(localStorage.getItem("city"));
+            console.log(localStorage.getItem("inst"));
+        };
+
+        // Clear all data from localStorage
+        const removeAll = () => {
+            localStorage.clear();
+            alert("All data removed");
+        };
+
+        console.log(localStorage)
+    </script>
+
+</body>
+</html>
