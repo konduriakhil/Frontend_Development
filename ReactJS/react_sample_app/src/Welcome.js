@@ -1,7 +1,10 @@
+import Simple from "./Simple";
 
-function Welcome()
-{
-    return <h1>Hello World</h1>
+
+function Welcome(){
+    return <div>
+    <h1>Welcome Function Component</h1>
+    {/* <Simple /> */}
+    </div>
 }
-
-export default Welcome
+export default Welcome;

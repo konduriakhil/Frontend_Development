@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box, #section{
+            border: 2px solid black;
+            width: 300px;
+            height: 300px;            
+            background-color: aliceblue;
+            border-radius: 10px;
+            padding: 100px;     
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        function greetings(name){
+            return 'Welcome ' + name + '<br>' + 'You are Logged In'+'<br>'
+        }
+
+        for(i=1;i<=10;i++)
+        {
+            if(i==1){
+            document.getElementById('box').innerHTML=('<h2>'+'19 table'+'</h2>')
+            }
+            document.getElementById('box').innerHTML+=('19'+' * '+i +' = '+(19*i)+ '<br>')
+        }
+
+    </script>
+</body>
+</html>
+class12
