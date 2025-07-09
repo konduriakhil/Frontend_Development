@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import LifeCycle from './LifeCycle';
-import LifeCycleOne from './LifeCycleOne';
-import Clock from './Clock';
+import Products from './Products';
+import ProductsList from './ProductsList';
 
 
 function App() {
   return (
-    <div className="App" >
-      <Clock />
-    </div>
+    <div className="App" >      
+      <ProductsList />
+      
+     </div>
   );
 }
 export default App;
