@@ -1,0 +1,23 @@
+*{
+        margin: 0;     
+        box-sizing: border-box;
+}
+
+.container{
+    width: 85%;
+    margin: 0px auto;
+}
+.block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.item{
+    flex: 25%;
+    border: 1px solid #333;
+    margin: 2px;
+    text-align: center;
+}
+
+.title{
+    color: red;
+}

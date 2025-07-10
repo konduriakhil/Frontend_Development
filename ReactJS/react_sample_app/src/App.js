@@ -1,16 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Products from './Products';
-import ProductsList from './ProductsList';
+import './CSS/styles.css'
+import InLineStyle from './inLineStyle';
 
 
 function App() {
   return (
-    <div className="App" >      
-      <ProductsList />
+    <div className="container" >      
+      <InLineStyle />
       
      </div>
   );
 }
 export default App;
 
+ 
