@@ -1,12 +1,13 @@
 import './App.css';
 import './CSS/styles.css'
-import InLineStyle from './inLineStyle';
+import HookCounter from './HookCounter';
+
 
 
 function App() {
   return (
     <div className="container" >      
-      <InLineStyle />
+      <HookCounter />
       
      </div>
   );
