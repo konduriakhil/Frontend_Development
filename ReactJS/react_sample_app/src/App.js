@@ -3,6 +3,7 @@ import './CSS/styles.css'
 import HookCounter from './HookCounter';
 import LoadDataHook from './LoadDataHook';
 import SubjectsHook from './SubjectsHook';
+import UpdateTitleHook from './UpdateTitleHook';
 import UsersHook from './UsersHook';
 
 
@@ -10,7 +11,7 @@ import UsersHook from './UsersHook';
 function App() {
   return (
     <div className="container" >      
-      <LoadDataHook />
+      <UpdateTitleHook />
       
      </div>
   );

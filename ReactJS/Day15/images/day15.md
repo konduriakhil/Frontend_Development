@@ -175,8 +175,8 @@ export default LoadDataHook;
 ---
 
 Let me know if you need further clarification or additional notes!
-# version 1
-Here are the final notes, now including the relevant **Chrome-rendered UI screenshots** as per your instructions:
+# version 2
+Here are the final consolidated notes based on the provided `.md` file content, images, and instructions:
 
 ---
 
@@ -217,9 +217,6 @@ export default UserHook;
   - Uses the `useState` hook to manage the list of subjects.
   - Implements the spread operator to merge the existing and new subjects.
   - Dynamically renders the list of subjects using `map()`.
-
-### UI Output:
-![UI Output](./images/img1.png)
 
 ---
 
@@ -294,9 +291,6 @@ export default UsersHook;
   - Dynamically renders user details using `map()`.
   - In the second version, calculates the user's age based on their date of birth using the `calculateAge` function.
 
-### UI Output:
-![UI Output](./images/img2.png)
-
 ---
 
 ## 3. LoadDataHook Component
@@ -356,8 +350,12 @@ export default LoadDataHook;
   - **Version 2:** The `useEffect` hook runs after every render because no dependency array is provided.
   - Includes a counter that increments when the button is clicked.
 
-### UI Output:
-![UI Output](./images/img3.png)
+---
+
+## Chrome-rendered UI Screenshots
+
+### Example UI Output:
+![UI Output](./images/img2.png)
 
 ---
 
