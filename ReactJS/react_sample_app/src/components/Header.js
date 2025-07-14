@@ -27,6 +27,9 @@ const Header = () => {
                                     <li>
                                           <Link to='/todo'>Todo List</Link>
                                     </li>
+                                    <li>
+                                          <Link to='/trail'>Trail</Link>
+                                    </li>
                               </ul>
                         </div>
                   </div>

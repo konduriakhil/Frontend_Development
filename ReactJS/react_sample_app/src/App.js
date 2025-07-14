@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import Register from "./components/Register";
 import Error404 from "./components/Error404";
 import TodoList from "./components/TodoList";
+import Trail from "./Trail";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <BrowserRouter>
                   <Routes>
                         <Route path="/" element={<Home />}></Route>
+                        <Route path="/trail" element={<Trail />}></Route>
                         <Route path='/about' element={<About></About>} />
                         <Route path="/contact" element={<Contact></Contact>}></Route>
                         <Route path="/register" element={<Register></Register>}></Route>
