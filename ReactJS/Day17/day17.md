@@ -171,7 +171,7 @@ const FetchUsers =() =>{
         axios.get('http://jsonplaceholder.typicode.com/users1234').then((res)=>{
             setUsers(res.data)
             setLoader(false);
-            setDisable(true)
+            setDisable(true);
         }).catch((err)=>{
             console.log(err.message);
             setErrorMsg(err.message);
@@ -527,7 +527,7 @@ export default FetchUsers
 
 ---
 
-# image version
+# **Image Version**
 Ah got it Akhil! 😊 You want to **keep the actual image references in context** like:
 
 ```md

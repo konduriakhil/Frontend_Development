@@ -8,7 +8,7 @@ class UserDetails extends Component
 
     render(){
         return(
-            <div>
+            <React.Fragment>
                 <h2>Name: {this.name}</h2>
                 <h2>Age: {this.age}</h2>
                 <h2>Skills: </h2>
@@ -18,7 +18,7 @@ class UserDetails extends Component
                     ))}
                 </ul>
                 <h2>Date & Time: {new Date().toLocaleString()}</h2>
-            </div>
+            </React.Fragment>
         )
     }
 }

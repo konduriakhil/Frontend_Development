@@ -1,0 +1,194 @@
+*{
+	margin: 0;
+	box-sizing: border-box;
+}
+a{
+	text-decoration:none;
+}
+
+
+/*********************************
+header styles
+***********************************/
+#header{
+	box-shadow: 0px 2px 10px #333;
+}
+.content{
+	width: 85%;
+	margin: 0px auto;
+	text-align: center;
+	color: gray;
+	padding: 40px 0px;
+}
+
+.header{
+	width: 85%;
+	margin:0px auto;
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+}
+.menu{
+	display: flex;
+	padding: 0px;
+}
+.menu li{
+	list-style-type:none;
+	padding: 10px 20px;
+}
+.menu li a{
+	color: #666;
+}
+.menu li:hover{
+	background-color: orange;
+	border-radius: 6px;
+}
+
+/********************************
+Banner Styles
+**********************************/
+.banner img{
+	width: 100%;
+}
+.banner{
+	position: relative;
+}
+.bannerinfo{
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	background-color: rgba(0,0,0,0.6);
+	color:#fff;
+	padding: 30px;
+}
+
+/*************************************
+Our Services Styles
+****************************************/
+.section-title{
+	text-align:center;
+	padding: 30px 0px;
+	font-size: 40px;
+	color: #a40000;
+}
+.services{
+	display: flex;
+	flex-wrap: wrap;
+	width: 85%;
+	margin: 0px auto;
+}
+.service{
+	flex: 30%;
+	padding: 20px;
+	margin: 10px;
+}
+.icontitle{
+	display: flex;
+	align-items:center;
+	margin-bottom: 10px;
+}
+.icon i{
+	font-size: 50px;
+	color: blue;
+}
+.icon{
+	padding-right:20px;
+}
+/*****************************************
+Features Styles
+******************************************/
+
+
+/**********************************
+Footer Styles
+**************************************/
+.footer{
+	background: #333;
+	padding: 20px 0px;
+}
+.footer p{
+	color: #fff;
+	text-align:center;
+}
+
+
+/*********************************
+About Page
+**********************************/
+.about{
+	display: flex;
+	flex-wrap: wrap;
+	align-items:center;
+	width: 85%;
+	margin:0px auto;
+}
+.abtleft, .abtright{
+	flex: 48%;
+}
+.abtleft img{
+	width: 100%;
+}
+.abtright{
+	line-height: 28px;
+	margin-left: 20px;
+}
+
+.content{
+	width: 85%;
+	margin: 0px auto;
+	padding: 40px 0px;
+}
+
+/**********************
+Form Design
+************************/
+.formgroup{
+	padding: 10px 0px;
+}
+.formcontrol{
+	width: 100%;
+	height: 38px;
+	border: 2px solid #333;
+	border-radius: 8px;
+}
+.btn{
+	
+}
+
+
+/************************************
+Media Query Section
+************************************/
+
+@media only screen and (max-width:600px){
+	.header, .menu{
+		flex-direction: column;
+	}
+	.bannerinfo{
+		display: none;
+	}
+	.services, .icontitle{
+		flex-direction: column;
+	}
+}
+@media only screen and (min-width: 601px) and (max-width: 900px)
+{
+	.header{
+		flex-direction: column;
+	}
+	.bannerinfo{
+		width: 98%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
