@@ -20,6 +20,9 @@ header styles
 	padding: 40px 0px;
 }
 
+.error{
+	color: red;
+}
 .header{
 	width: 85%;
 	margin:0px auto;

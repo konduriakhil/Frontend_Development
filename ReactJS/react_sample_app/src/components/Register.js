@@ -1,126 +1,252 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-import { useState } from 'react'
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import { useState } from 'react';
 import axios from 'axios';
 
+
 const Register = () => {
+      const [formdata, setFormdata] = useState({
+            username: '',
+            email: '',
+            gender: '',
+            state: '',
+            terms: false,
+            hobbies: []
+      });
 
-      const[formdata, setFormdata] = useState({username: '', email: ''})
-      const[formErrors, setFormErrors] = useState({username: '', email: ''})
+      const [formErrors, setFormErrors] = useState({
+            username: '',
+            email: '',
+            gender: '',
+            state:''
+      });
 
-      const handleSubmit =(event)=>{
-            event.preventDefault();
-            // Validate the form
-            if(formValidation()){
-            console.log(formdata)
-            let data={username: formdata.username, email: formdata.email}
-            axios.post('http://localhost/reactAPI/users.php', JSON.stringify(data), {
-                  headers: {
-                        'Content-Type': 'application/json'
-                  }
-            }).then(res =>{
-                        let info = res.data
-                        console.log(info)
-                        console.log(info.message)
-                        setFormdata({username: '', email: ''})
-                  }).catch(err =>{
-                        console.log(err.message)
+      const [touched, setTouched] = useState({
+            username: false,
+            email: false,
+            gender: false,
+            state: false
+      });
+
+      const updateHandle = (event) => {
+            if(event.target.type === 'checkbox'){
+                  if(event.target.name === 'hobbies'){
+                        const findIndex = formdata.hobbies.indexOf(event.target.value)
+                       if(findIndex === -1){
+                            formdata.hobbies.push(event.target.value);
+                       }else{
+                              formdata.hobbies.splice(findIndex, 1)
+                       }        
+                       setFormdata({
+                        ...formdata,
+                        [event.target.name]: formdata.hobbies
+                  })                
+              }
+
+                  else{
+                  setFormdata({
+                        ...formdata,
+                        [event.target.name]: event.target.checked ? true : false
                   })
-            
+            }
             }
             else{
-                  console.log('Sorry! No Data Found');
+                  setFormdata({
+                        ...formdata,
+                        [event.target.name]: event.target.value
+                  });
             }
-      }
+      };
 
-      const updateHandle  = (event) =>{
-            setFormdata({
-                  ...formdata,
-                  [event.target.name]: event.target.value
-            })
-      }
+      const handleFocus = (event) => {
+            const { name } = event.target;
+            setFormErrors({
+                  ...formErrors,
+                  [name]: ''
+            });
+      };
 
-      const isValidEmail = (email) =>{
-            let isValid = true;
+      const isValidEmail = (email) => {
             var filter = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            if(!filter.test(email)){
-                  isValid = false;                  
+            return filter.test(email);
+      };
+
+      const handleBlur = (event) => {
+            const { name, value } = event.target;
+
+            setTouched({
+                  ...touched,
+                  [name]: true
+            });
+
+            let errorMsg = '';
+            if (value.trim() === '') {
+                  errorMsg = `${name.charAt(0).toUpperCase() + name.slice(1)} is Required`;
+            } else if (name === 'email' && !isValidEmail(value)) {
+                  errorMsg = 'Enter Valid Email';
             }
-            return isValid
-      }
 
-      const formValidation = () =>{
+            setFormErrors({
+                  ...formErrors,
+                  [name]: errorMsg
+            });
+      };
+
+      const formValidation = () => {
             let valid = true;
-            let errors ={}
+            let errors = {};
 
-            if(formdata.username === ''){
+            if (formdata.username.trim() === '') {
                   valid = false;
                   errors.username = 'Username is Required';
             }
-            if(formdata.email === ''){
+
+            if (formdata.email.trim() === '') {
                   valid = false;
-                  errors.email= 'Email is Required'
+                  errors.email = 'Email is Required';
+            } else if (!isValidEmail(formdata.email)) {
+                  valid = false;
+                  errors.email = 'Enter Valid Email';
             }
-            else{
-                  valid = true;
-                  if(!isValidEmail(formdata.email)){
-                        valid = false;
-                        errors.email= 'Enter Valid Email'
-                  }                  
+
+            if (formdata.gender.trim() === '') {
+                  valid = false;
+                  errors.gender = 'Gender is Required';
             }
-            setFormErrors(errors)
+
+            if (formdata.state.trim() === '') {
+                  valid = false;
+                  errors.state = 'State is Required';
+            }
+
+            
+            if (formdata.terms === false) {
+                  valid = false;
+                  alert('Please accept terms and conditions')
+            }
+
+            if (formdata.hobbies.length < 1) {
+                  valid = false;
+                  alert('Please Select atleast one checkbox')
+            }
+            setFormErrors(errors);
+            setTouched({ username: true, email: true, gender: true, state: true });
             return valid;
-      }
+      };
 
-      const checkField = (event) =>{
-            if(event.target.value === ''){
- 
-                  setFormErrors({
-                        ...formErrors,
-                        [event.target.name] : ''
+      const handleSubmit = (event) => {
+            event.preventDefault();
+            console.log(formdata);
+            if (formValidation()) {
+                  axios.post('http://localhost/reactAPI/users.php', JSON.stringify(formdata), {
+                        headers: {
+                              'Content-Type': 'application/json'
+                        }
                   })
-            };
-          
-      }
-
-      const checkValue = (event) =>{
-            if(event.target.value === ''){
-                  setFormErrors({
-                        ...formErrors,
-                        [event.target.name]: event.target.name + ' is Required '
-                  })
+                        .then(res => {
+                              console.log(res.data.message);
+                              console.log(res.data)
+                              setFormdata({ username: '', email: '', gender: '', state: '', terms: false});
+                              setFormErrors({ username: '', email: '', gender: '', state: '' });
+                              setTouched({ username: false, email: false, gender: false, state: false, terms: false });
+                        })
+                        .catch(err => {
+                              console.log(err.message);
+                        });
+            } else {
+                  console.log('Sorry! No Data Found');
             }
-      }
+      };
 
       return (
             <React.Fragment>
                   <Header />
                   <section className='content'>
                         <h1>Register Here</h1>
-                        <form method='POST' action='' onSubmit={handleSubmit} autoComplete='off'>
+                        <form method='POST' onSubmit={handleSubmit} autoComplete='off'>
 
                               <div className='formgroup'>
                                     <label>Username</label>
-                                    <input  onBlur={checkValue} onFocus={checkField} type='text' name='username' className='formcontrol' value={formdata.username} onChange={updateHandle} />
-                                    {formErrors.username ? <span className='error'>{formErrors.username}</span> : null}                                    
+                                    <input
+                                          type='text'
+                                          name='username'
+                                          className='formcontrol'
+                                          value={formdata.username}
+                                          onChange={updateHandle}
+                                          onBlur={handleBlur}
+                                          onFocus={handleFocus}
+                                    />
+                                    {touched.username && formErrors.username && <span className='error'>{formErrors.username}</span>}
                               </div>
 
                               <div className='formgroup'>
                                     <label>Email</label>
-                                    <input type='text' onBlur={checkValue} onFocus={checkField} name='email' className='formcontrol' value={formdata.email} onChange={updateHandle} />
-                                    { formErrors.email ? <span className='error'>{formErrors.email}</span>:null}
+                                    <input
+                                          type='text'
+                                          name='email'
+                                          className='formcontrol'
+                                          value={formdata.email}
+                                          onChange={updateHandle}
+                                          onBlur={handleBlur}
+                                          onFocus={handleFocus}
+                                    />
+                                    {touched.email && formErrors.email && <span className='error'>{formErrors.email}</span>}
+                              </div>
+
+                              <div className='formgroup'>
+                                    <label>Gender</label><br />
+                                    {['Male', 'Female', 'Other'].map((g) => (
+                                          <label key={g}>
+                                                <input
+                                                      type='radio'
+                                                      name='gender'
+                                                      value={g}
+                                                      checked={formdata.gender === g}
+                                                      onChange={updateHandle}
+                                                      onBlur={handleBlur}
+                                                      onFocus={handleFocus}
+                                                /> {g}
+                                          </label>
+                                    ))}
+                                    <br />
+                                    {touched.gender && formErrors.gender && <span className='error'>{formErrors.gender}</span>}
+                              </div>
+
+                              <div className='formgroup'>
+                                    <label>Select State</label>
+                                    <select name='state'  value= {formdata.state} onFocus={handleFocus} onBlur={handleBlur} className='formcontrol' onChange={updateHandle}>
+                                          <option value=''>--Select State--</option>
+                                          <option value='Karnataka'>Karnataka</option>
+                                          <option value='Telangana'>Telangana</option>
+                                          <option value='Andhra Pradesh'>Andhra Pradesh</option>
+                                    </select>
+                                    <br />
+                                    {touched.state && formErrors.state && <span className='error'>{formErrors.state}</span>}
+                              </div>
+
+                              <div className='formgroup'>
+                                    <label style={{fontWeight: 'bold'}}>Hobbies:  </label>
+                                    <label><input type='checkbox' name='hobbies' value='Playing' onChange={updateHandle} />Playing</label>
+                                    <label><input type='checkbox' name='hobbies' value='Reading' onChange={updateHandle} />Reading</label>
+                                    <label><input type='checkbox' name='hobbies' value='Coocking' onChange={updateHandle} />Coocking</label>
+                                    <label><input type='checkbox' name='hobbies' value='Listening Music' onChange={updateHandle} />Listening Music</label>
+                              </div>
+
+
+                              <div className='formgroup'>
+                                    <label><input type='checkbox' name= 'terms' value={formdata.terms} onChange={updateHandle}/>Please accept terms and conditions</label>
                               </div>
 
                               <div className='formgroup'>
                                     <input type='submit' value='Save' />
                               </div>
-
+                              
                         </form>
                   </section>
-                  <Footer></Footer>
+                  <Footer />
             </React.Fragment>
-      )
-}
+      );
+};
 
-export default Register
+export default Register;
