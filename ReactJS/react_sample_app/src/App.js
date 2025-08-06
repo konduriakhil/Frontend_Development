@@ -1,30 +1,31 @@
-import Home from "./components/Home";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Register from "./components/Register";
-import Error404 from "./components/Error404";
-import TodoList from "./components/TodoList";
-import Trail from "./Trail";
+import ComponentC from "./ComponentC";
+import ComponentE from "./ComponentE";
+import ComponentF from "./ComponentF";
+import React from "react";
+import ComponentA from "./ComponentA";
 
+
+export const SubjectsContext = React.createContext();
+export const UserContext = React.createContext();
 function App() {
 
+      const subjects = ['HTML', 'JS', 'REACT']
+
       return (
-
-            <BrowserRouter>
-                  <Routes>
-                        <Route path="/" element={<Home />}></Route>
-                        <Route path="/trail" element={<Trail />}></Route>
-                        <Route path='/about' element={<About></About>} />
-                        <Route path="/contact" element={<Contact></Contact>}></Route>
-                        <Route path="/register" element={<Register></Register>}></Route>
-                        <Route path="/todo" element={<TodoList />}></Route>
-                        <Route path="*" element={<Error404></Error404>}></Route>
-                  </Routes>
-            </BrowserRouter>
+            <UserContext.Provider value={{username: 'akhilkonduri', id: '488'}}>
+                  <SubjectsContext.Provider value={subjects}>
+            <div>
+                  <ComponentC  />
+                  <hr></hr>
+                  <ComponentE />
+                  <hr></hr>
+                  <ComponentA />
+            </div>
+            </SubjectsContext.Provider>
+            </UserContext.Provider>
       )
-
 }
 
 export default App
