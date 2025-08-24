@@ -28,3 +28,11 @@ npm start
  in the index.js file
  * Add different components like  header, footer, home, slider etc..,
 
+# Bootstrap
+[![YouTube Video](https://img.youtube.com/vi/S-ri_In6qcA/0.jpg)](https://youtu.be/S-ri_In6qcA?si=r9Ex3xHH_jmvE_Iw)
+![alt text](images/img7.png)
+* Bootstrap is a css framework
+* Which is used for styling and layout of the website
+* 
+ 
+ 

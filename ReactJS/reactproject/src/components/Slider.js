@@ -1,5 +1,7 @@
 import React from 'react'
 import amma from '../images/amma.jpg'
+import img1 from '../images/img1.png'
+import image from '../images/image.png'
 import rama from '../images/rama2.avif'
 import rama1 from '../images/ramanujan1.jpg'
 
@@ -8,7 +10,7 @@ const Slider = () => {
       <div id="carouselExampleRide" className="carousel slide" data-bs-ride="true">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={amma} className="d-block w-100" alt="Banner1" />
+          <img src={image} className="d-block w-100" alt="Banner1" />
         </div>
         <div className="carousel-item">
           <img src={rama} className="d-block w-100" alt="Banner2" />
