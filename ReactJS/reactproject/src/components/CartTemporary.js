@@ -1,17 +1,25 @@
 import Header from './Header'
 import Footer from './Footer'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addToTempCart } from '../redux/cartTempSlice'
 
+ 
 
 const CartTemporary = () => {
 
       const tempCartItemsList = useSelector((state) => state.tempCart.cartTempItems)
 
+      const dispatch = useDispatch();
+
       const content = tempCartItemsList.length > 0 ? tempCartItemsList.map((item, index) => <tr key={index}>
-            <td>{item.id}</td>
+            <td>{index + 1}</td>
             <td>{item.title}</td>
             <td>{item.price}</td>
-            <td>{item.quantity}</td>
+            <td>
+                  <button onClick={()=>{dispatch(addToTempCart(item))}} className='btn btn-outline-success mx-2' >+</button>                  
+                  {item.quantity}
+                  <button>-</button>
+            </td>
             <td>{item.quantity * item.price}</td>
       </tr>) : null
 
@@ -44,3 +52,5 @@ const CartTemporary = () => {
 }
 
 export default CartTemporary
+
+

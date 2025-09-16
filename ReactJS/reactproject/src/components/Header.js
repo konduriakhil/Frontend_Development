@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { Link } from 'react-router-dom'
+import { getTotals } from '../redux/cartSlice';
+
 
 const Header = () => {
+
+      const dispatch = useDispatch();
+
+      const {cartItems, cartTotalQuantity} = useSelector((state) => state.cart)
+
+      useEffect(()=>{
+            dispatch(getTotals())
+      },[cartItems])
+
+      console.log(cartTotalQuantity)
+
       return (
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                   <div className="container">
@@ -31,13 +45,12 @@ const Header = () => {
                                           <Link to='/products' className="nav-link" >Products</Link>
                                     </li>
                                     <li className="nav-item">
-                                          <Link to='/carttemp' className="nav-link" >CartTemporary</Link>
+                                          <Link to='/carttemp' className="nav-link" >CartTemporary(0)</Link>
                                     </li>
-
 
                               </ul>
                               <div className="d-flex" role="search">
-                                    <Link to='/cart' >Cart(0)</Link>
+                                    <Link to='/cart' >Cart({cartTotalQuantity})</Link>
                               </div> 
                         </div>
                   </div>

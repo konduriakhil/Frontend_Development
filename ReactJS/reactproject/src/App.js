@@ -11,6 +11,7 @@ import Error404 from './components/Error404'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import CartTemporary from './components/CartTemporary'
+import Checkout from './components/Checkout'
 
 const App = () => {
       return (
@@ -26,6 +27,7 @@ const App = () => {
                         <Route path='/cart' element={<Cart />}></Route>                  
                         <Route path='*' element={<Error404 />}></Route>
                         <Route path='/carttemp' element={<CartTemporary />}></Route>
+                        <Route path='/checkout' element={<Checkout />}></Route>
                   </Routes>
             </BrowserRouter>
       )

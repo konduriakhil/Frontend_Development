@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const initialState = {
       cartTempItems: [],
 }
-
+ 
 const cartTempSlice = createSlice({
       name: 'tempCart',
       initialState,
