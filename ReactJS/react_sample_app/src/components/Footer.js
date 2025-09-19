@@ -1,13 +1,18 @@
 import React from 'react'
+import dateInfo from './dateInfo'
 
-const Footer = () => {
-  return (
-    <footer id="footer">
-        <div className="footer">
-            <p>&copy; 2022 All rights reserved</p>
-        </div>
-    </footer>
-  )
+const Footer = (props) => {
+      
+      const { time } = props;
+
+      return (
+            <footer id="footer">
+                  <div className="footer">
+                        <p>&copy; 2022 All rights reserved</p>
+                        <p>Time - {time}</p>
+                  </div>
+            </footer>
+      )
 }
 
-export default Footer
+export default dateInfo(Footer)

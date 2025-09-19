@@ -30,6 +30,12 @@ const Header = () => {
                                     <li>
                                           <Link to='/trail'>Trail</Link>
                                     </li>
+                                    <li>
+                                          <Link to='/countera'>CounterA</Link>
+                                    </li>
+                                    <li>
+                                          <Link to='/counterb'>CounterB</Link>
+                                    </li>
                               </ul>
                         </div>
                   </div>
