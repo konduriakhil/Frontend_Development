@@ -1,7 +1,7 @@
 import React from "react";
-
 import logo from "../assets/images/10.png";
 import { Link } from "react-router-dom";
+import dateInfo from "./dateInfo";
 
 const Header = () => {
       return (
@@ -35,7 +35,7 @@ const Header = () => {
                                     </li>
                                     <li>
                                           <Link to='/counterb'>CounterB</Link>
-                                    </li>
+                                    </li>      
                               </ul>
                         </div>
                   </div>
@@ -43,4 +43,4 @@ const Header = () => {
       );
 };
 
-export default Header;
+export default dateInfo(Header);

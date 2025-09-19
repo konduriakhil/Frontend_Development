@@ -408,106 +408,195 @@ function App() {
 
 export default App;
 ```
+
 ### By using this HOC we can add date to the Footer componet
-* Create **dateInfo.js** component
-* At this time we are using functional components
+
+- Create **dateInfo.js** component
+- At this time we are using functional components
+
 ```jsx
-import React from 'react'
-import dateInfo from './dateInfo'
+import React from "react";
+import dateInfo from "./dateInfo";
 
 const Footer = (props) => {
-      
-      const { time } = props;
+  const { time } = props;
 
-      return (
-            <footer id="footer">
-                  <div className="footer">
-                        <p>&copy; 2022 All rights reserved</p>
-                        <p>Time - {time}</p>
-                  </div>
-            </footer>
-      )
-}
+  return (
+    <footer id="footer">
+      <div className="footer">
+        <p>&copy; 2022 All rights reserved</p>
+        <p>Time - {time}</p>
+      </div>
+    </footer>
+  );
+};
 
-export default dateInfo(Footer)
+export default dateInfo(Footer);
 ```
+
 ```jsx
 const dateInfo = (OriginalComponent) => {
+  const getTimeInfo = (props) => {
+    const d = new Date();
+    let time = d.toLocaleString();
 
-      const getTimeInfo = (props) => {
-            const d = new Date();
-            let time = d.toLocaleString();
+    return <OriginalComponent {...props} time={time} />;
+  };
+  return getTimeInfo;
+};
 
-            return <OriginalComponent {...props} time={time} />
-      }
-      return getTimeInfo;
-}
-
-export default dateInfo
+export default dateInfo;
 ```
+
 ![alt text](images/img2.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- We can also change the Header section with time like below
+
+```jsx
+import React from "react";
+import logo from "../assets/images/10.png";
+import { Link } from "react-router-dom";
+import dateInfo from "./dateInfo";
+
+const Header = (props) => {
+  const { time } = props;
+
+  return (
+    <header id="header">
+      <div className="header">
+        <div className="logo">
+          <img src={logo} alt="logo.." />
+        </div>
+        <div className="mainmenu">
+          <ul className="menu">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/register">Register Here</Link>
+            </li>
+            <li>
+              <Link to="/todo">Todo List</Link>
+            </li>
+            <li>
+              <Link to="/trail">Trail</Link>
+            </li>
+            <li>
+              <Link to="/countera">CounterA</Link>
+            </li>
+            <li>
+              <Link to="/counterb">CounterB</Link>
+            </li>
+            <li>
+              <h2>Time-{time}</h2>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default dateInfo(Header);
+```
+
+```jsx
+const dateInfo = (OriginalComponent) => {
+  const getTimeInfo = (props) => {
+    const d = new Date();
+    let time = d.toLocaleDateString();
+
+    return <OriginalComponent {...props} time={time} />;
+  };
+  return getTimeInfo;
+};
+
+export default dateInfo;
+```
+
+![alt text](images/img1.png)
+
+### For Timer
+
+```jsx
+import React, { useEffect, useState } from "react";
+
+const dateInfo = (OriginalComponent) => {
+  const NewComponent = () => {
+    const [timer, setTimer] = useState(new Date().toLocaleString());
+
+    useEffect(() => {
+      setInterval(() => {
+        setTimer(new Date().toLocaleString());
+      }, 1000);
+    }, []);
+
+    return <OriginalComponent time={timer} />;
+  };
+  return NewComponent;
+};
+
+export default dateInfo;
+```
+
+- we can make the Header component like below
+
+```jsx
+import React from "react";
+import logo from "../assets/images/10.png";
+import { Link } from "react-router-dom";
+import dateInfo from "./dateInfo";
+
+const Header = (props) => {
+  const { time } = props;
+
+  return (
+    <header id="header">
+      <div className="header">
+        <div className="logo">
+          <img src={logo} alt="logo.." />
+        </div>
+        <div className="mainmenu">
+          <ul className="menu">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/register">Register Here</Link>
+            </li>
+            <li>
+              <Link to="/todo">Todo List</Link>
+            </li>
+            <li>
+              <Link to="/trail">Trail</Link>
+            </li>
+            <li>
+              <Link to="/countera">CounterA</Link>
+            </li>
+            <li>
+              <Link to="/counterb">CounterB</Link>
+            </li>
+            <li>
+              <h1>{time}</h1>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default dateInfo(Header);
+```

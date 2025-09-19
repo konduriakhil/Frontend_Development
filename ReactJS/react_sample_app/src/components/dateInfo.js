@@ -1,12 +1,20 @@
+import React, { useEffect, useState } from "react";
+
 const dateInfo = (OriginalComponent) => {
 
-      const getTimeInfo = (props) => {
-            const d = new Date();
-            let time = d.toLocaleString();
+      const NewComponent = (props) => {
 
-            return <OriginalComponent {...props} time={time} />
+            const [timer, setTimer] = useState(new Date().toLocaleString());
+
+            useEffect(() => {
+                  setInterval(() => {
+                        setTimer(new Date().toLocaleString())
+                  }, 1000)
+            }, [])
+
+            return <OriginalComponent {...props} time={timer} />
       }
-      return getTimeInfo;
+      return NewComponent;
 }
 
 export default dateInfo
