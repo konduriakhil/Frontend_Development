@@ -365,13 +365,26 @@ export default MemoDemo;
 - useMemo does not return a function it always return a value
   ![alt text](images/img6.png)
 
+# Ashok's Material
 
+- Optimizing the performance of a product filter or search functionality to avoid unnecessary re-renders
+  using useCallback and useMemo.
 
+2. useCallback
+   Using useCallback to memoize callback functions, preventing re-creation of functions on every render.
+3. useMemo
+   Using useMemo to memoize expensive computations and avoid recalculating on every render.
 
-
-
-
-
-
-
-
+- useCallback:
+  useCallback hook in is used to memoize functions.
+  It returns a memoized version of the callback function that only changes if one of the dependencies has
+  changed. This is useful for optimizing performance, especially in scenarios where passing functions as
+  props to child components could cause unnecessary re-renders.
+  use cases in my e-commerce application:
+  **Handling User Authentication**:
+  In my e-commerce application,i used useCallback to memoize the function for adding items to the cart to
+  prevent unnecessary re-renders of the product list component.
+  When managing the shopping cart, we optimized the quantity update functionality using useCallback to
+  ensure that only the necessary components re-rendered.
+  used useCallback to memoize the login function to avoid re-creating the function on every render,
+  improving the performance of the authentication component.

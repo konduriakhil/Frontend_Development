@@ -35,7 +35,10 @@ const Header = () => {
                                     </li>
                                     <li>
                                           <Link to='/counterb'>CounterB</Link>
-                                    </li>      
+                                    </li>
+                                    <li>
+                                          <Link to='/userlist'>UserList</Link>
+                                    </li>
                               </ul>
                         </div>
                   </div>

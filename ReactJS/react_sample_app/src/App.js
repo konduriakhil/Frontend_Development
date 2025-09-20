@@ -1,11 +1,15 @@
 import React from 'react'
-import MemoDemo from './MemoDemo'
+import CounterReducer from './components/CounterReducer'
+import CounterReducerOne from './components/CounterReducerOne'
+import FetchDataReducer from './components/FetchDataReducer'
+
 
 const App = () => {
       return (
             <div>
-                  <h1>useCallback Hook</h1>
-                  <MemoDemo />
+                  {/* <CounterReducer /> */}
+                  {/* <CounterReducerOne /> */}
+                  <FetchDataReducer />
             </div>
       )
 }
