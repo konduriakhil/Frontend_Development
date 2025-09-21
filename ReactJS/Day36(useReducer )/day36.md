@@ -205,6 +205,95 @@ const CounterReducerOne = () => {
 export default CounterReducerOne;
 ```
 
+```jsx
+import React, { useEffect, useReducer } from "react";
+import axios from "axios";
+
+const initialState = {
+  loader: true,
+  errorMsg: "",
+  usersList: [],
+};
+
+const dataReducer = (state, action) => {
+  switch (action.type) {
+    case "FETCH_REQUEST":
+      return {
+        loader: true,
+        errorMsg: "",
+        usersList: [],
+      };
+    case "FETCH_SUCCESS":
+      return {
+        loader: false,
+        errorMsg: "",
+        usersList: action.payload,
+      };
+    case "FETCH_FAIL":
+      return {
+        loader: false,
+        errorMsg: action.payload,
+        usersList: [],
+      };
+    default:
+      return state;
+  }
+};
+
+const FetchDataReducer = () => {
+  const [data, dispatch] = useReducer(dataReducer, initialState);
+
+  useEffect(() => {
+    dispatch({ type: "FETCH_REQUEST" });
+
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        dispatch({ type: "FETCH_SUCCESS", payload: res.data });
+      })
+      .catch((err) => {
+        dispatch({ type: "FETCH_FAIL", payload: err.message });
+      });
+  }, []);
+
+  return (
+    <div>
+      <h1>UserInformationFetching</h1>
+
+      {data.loader ? "Loading...." : null}
+      {data.errorMsg ? data.errorMsg : null}
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.usersList.length > 0
+            ? data.usersList.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.id}</td>
+                  <td>{item.username}</td>
+                  <td>{item.email}</td>
+                  <td>{item.phone}</td>
+                  <td>{item.address.city}</td>
+                </tr>
+              ))
+            : null}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default FetchDataReducer;
+```
+
 ![alt text](images/img5.png)
 
 # Ashok
@@ -213,3 +302,20 @@ export default CounterReducerOne;
    it is used to Manage more complex state logic in a component.
    useReducer when we have complex state logic that involves when the next state depends on the
    previous one. It’s also useful for centralizing state updates in a way similar to Redux.
+   Interview Answer: useState vs useReducer
+
+“In React, both useState and useReducer are hooks used to manage state, but they serve slightly different purposes.
+
+useState is simple and ideal for individual or simple states. For example, updating a single counter value or a toggle button. It’s straightforward—you call the setter function (setState) directly whenever the state changes.
+
+useReducer, on the other hand, is better for complex state logic or when multiple state values are related. Instead of updating state directly, you define a reducer function that handles all possible state transitions based on an action. This makes the state updates predictable, centralized, and easier to debug.
+
+For example, in a counter with multiple actions like increment, decrement, double, and reset, useReducer lets you handle all actions in a single reducer function, rather than having multiple setState calls.
+
+So the advantages of useReducer over useState are:
+
+Centralized and organized state logic
+
+Predictable and maintainable updates
+
+Scales better for complex components
