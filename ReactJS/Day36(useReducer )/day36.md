@@ -298,7 +298,7 @@ export default FetchDataReducer;
 
 # Ashok
 
-2. useReducer
+2. **useReducer**
    it is used to Manage more complex state logic in a component.
    useReducer when we have complex state logic that involves when the next state depends on the
    previous one. It’s also useful for centralizing state updates in a way similar to Redux.

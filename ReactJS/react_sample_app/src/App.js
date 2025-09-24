@@ -1,17 +1,16 @@
 import React from 'react'
-import CounterReducer from './components/CounterReducer'
-import CounterReducerOne from './components/CounterReducerOne'
-import FetchDataReducer from './components/FetchDataReducer'
-import Trash from './components/Trash'
-
+import RefHookDemo from './components/RefHookDemo'
+import Timer from './components/Timer'
+import Data from './components/Data'
 
 const App = () => {
       return (
             <div>
-                  {/* <CounterReducer /> */}
-                  {/* <CounterReducerOne /> */}
-                  {/* <FetchDataReducer /> */}
-                  <Trash />
+                  <RefHookDemo />
+                  <hr />
+                  <Timer />
+                  <hr></hr>
+                 <Data /> 
             </div>
       )
 }
