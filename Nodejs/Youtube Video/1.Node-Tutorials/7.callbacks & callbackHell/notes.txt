@@ -1,0 +1,2 @@
+# Callback logic concepts
+- Passed as arguments to the other functions
