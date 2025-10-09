@@ -304,7 +304,7 @@ export default FetchDataReducer;
    previous one. It’s also useful for centralizing state updates in a way similar to Redux.
    Interview Answer: useState vs useReducer
 
-“In React, both useState and useReducer are hooks used to manage state, but they serve slightly different purposes.
+“In React, both useState and useReducer are hooks used to manage state, but they serve slightly different purposes.-
 
 useState is simple and ideal for individual or simple states. For example, updating a single counter value or a toggle button. It’s straightforward—you call the setter function (setState) directly whenever the state changes.
 
