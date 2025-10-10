@@ -17,7 +17,7 @@ const Posts = () => {
       [event.target.name]: event.target.value
     });
   };
-
+  
   const handleSubmit =(event) =>{
     event.preventDefault();
     const newData ={

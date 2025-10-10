@@ -20,7 +20,8 @@ const postSlice = createSlice({
       initialState,
       reducers: {
             addPost: (state, action) => {
-                  state.articles.push(action.payload)
+                  // state.articles.push(action.payload)
+                  console.log(action);
             },
             deletePost: (state, action) => {
                   state.articles = state.articles.filter(item => item.id !== action.payload)
